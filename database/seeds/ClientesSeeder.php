@@ -13,9 +13,12 @@ class ClientesSeeder extends Seeder
      */
     public function run()
     {
+        $n = 10000;
         $faker = Faker::create();
-        for ($i = 0; $i < 10; $i++) { 
-            $departamento = Departamento::inRandomOrder()->first();
+        $departamentos = Departamento::inRandomOrder()->get();
+
+        for ($i = 0; $i < $n; $i++) { 
+            $departamento = $departamentos->shuffle()->first();
             $municipio = $departamento->municipios->shuffle()->first();
 
             DB::table('clientes')->insert([

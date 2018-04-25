@@ -14,6 +14,7 @@ class CreateClientesTable extends Migration
     public function up()
     {
         Schema::create('clientes', function (Blueprint $table) {
+            $table->engine = 'MyISAM';
             $table->increments('id');
             $table->unsignedInteger('departamento_id');
             $table->unsignedInteger('municipio_id');

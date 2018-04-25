@@ -14,6 +14,7 @@ class CreateEmpleadosTable extends Migration
     public function up()
     {
         Schema::create('empleados', function (Blueprint $table) {
+            $table->engine = 'MyISAM';
             $table->increments('id');
             $table->unsignedInteger('sucursal_id');
             $table->string('nombre');

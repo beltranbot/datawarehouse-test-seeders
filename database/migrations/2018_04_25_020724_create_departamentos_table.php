@@ -14,6 +14,7 @@ class CreateDepartamentosTable extends Migration
     public function up()
     {
         Schema::create('departamentos', function (Blueprint $table) {
+            $table->engine = 'MyISAM';
             $table->increments('id');
             $table->string('codigo_dane');
             $table->string('name');

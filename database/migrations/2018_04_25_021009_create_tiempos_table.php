@@ -14,6 +14,7 @@ class CreateTiemposTable extends Migration
     public function up()
     {
         Schema::create('tiempos', function (Blueprint $table) {
+            $table->engine = 'MyISAM';
             $table->increments('id');
             $table->datetime('fecha');
             $table->integer('dia')->nullable();

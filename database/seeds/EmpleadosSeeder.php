@@ -14,9 +14,12 @@ class EmpleadosSeeder extends Seeder
     public function run()
     {
         $faker = Faker::create();
+        $n = 100;
+
+        $sucursals = Sucursal::inRandomOrder()->get();
 
         for ($i = 0; $i < 20; $i++) { 
-            $sucursal = Sucursal::inRandomOrder()->first();
+            $sucursal = $sucursals->shuffle()->first();
 
             DB::table('empleados')->insert([
                 'sucursal_id' => $sucursal->id,
@@ -26,7 +29,6 @@ class EmpleadosSeeder extends Seeder
                     $endDate = '-5 months',
                     $timezone = null)
             ]);
-
 
         }
     }

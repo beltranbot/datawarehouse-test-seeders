@@ -14,6 +14,7 @@ class CreateMunicipiosTable extends Migration
     public function up()
     {
         Schema::create('municipios', function (Blueprint $table) {
+            $table->engine = 'MyISAM';
             $table->increments('id');
             $table->unsignedInteger('departamento_id');
             $table->string('codigo_dane');

@@ -14,7 +14,8 @@ class TiemposSeeder extends Seeder
     {
         $faker = Faker::create();
         $dates = [];
-        for ($i = 0; $i < 60; $i++) { 
+        $n = 200;
+        for ($i = 0; $i < $n; $i++) { 
             $dates[] = $faker->dateTimeBetween(
                 $startDate = '-2 years',
                 $endDate = 'now',

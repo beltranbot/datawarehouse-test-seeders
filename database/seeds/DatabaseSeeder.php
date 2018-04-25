@@ -17,7 +17,8 @@ class DatabaseSeeder extends Seeder
         $this->call(TiemposSeeder::class);
         $this->call(SucursalsSeeder::class);
         $this->call(ClientesSeeder::class);
-        $this->call(EmpleadosSeeder::class);
-        $this->call(VehiculosSeeder::class);
+        // $this->call(EmpleadosSeeder::class);
+        // $this->call(VehiculosSeeder::class);
+        $this->call(VentasSeeder::class);
     }
 }

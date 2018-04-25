@@ -14,6 +14,7 @@ class CreateVehiculosTable extends Migration
     public function up()
     {
         Schema::create('vehiculos', function (Blueprint $table) {
+            $table->engine = 'MyISAM';
             $table->increments('id');
             $table->unsignedInteger('sucursal_id');
             $table->string('matricula');
@@ -21,6 +22,7 @@ class CreateVehiculosTable extends Migration
             $table->string('categoria');
             $table->string('num_seguro');
             $table->decimal('precio', 16, 2);
+            $table->boolean('vendido')->default(false);
 
             $table->timestamps();
 
